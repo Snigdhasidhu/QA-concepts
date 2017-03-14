@@ -1,0 +1,318 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil Consolas;}{\f2\fnil\fcharset0 Consolas;}}
+{\colortbl ;\red127\green0\blue85;\red0\green0\blue0;\red106\green62\blue62;\red100\green100\blue100;\red42\green0\blue255;\red0\green0\blue192;\red0\green77\blue187;\red75\green172\blue198;\red192\green80\blue77;\red255\green0\blue0;\red0\green176\blue80;\red63\green127\blue95;\red127\green159\blue191;\red0\green128\blue128;\red63\green127\blue127;\red127\green0\blue127;}
+{\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\sa200\sl276\slmult1\qc\lang9\ul\b\f0\fs36 Frameworks                          \ulnone\fs22  \par
+\pard\sa200\sl276\slmult1\qr                                                                                                                                                                  Dt: 02-17-2017\par
+\par
+\pard\sa200\sl276\slmult1 # Creating Jar file Using Exception handling  in selenium\par
+code:  \cf1\f1\fs20 import\cf2\b0  java.util.Scanner;\cf0\par
+\cf1\b public\cf2\b0  \cf1\b class\cf2\b0  Example \{\cf0\par
+\cf2\tab\tab\cf1\b public\cf2\b0  \cf1\b static\cf2\b0  \cf1\b void\cf2\b0  main(String[]\cf3 args\cf2 )\{\cf0\par
+\cf2\tab\tab  \cf4 @SuppressWarnings\cf2 (\cf5 "resource"\cf2 )\cf0\par
+\cf2\tab\tab Scanner \cf3 input\cf2  = \cf1\b new\cf2\b0  Scanner(System.\cf6\b\i in\cf2\b0\i0 );\cf0\par
+\cf2\tab\tab  \cf1\b int\cf2\b0  \cf3 x\cf2 =1;\cf0\par
+\cf2\tab\tab  \cf1\b do\cf0\b0\par
+\cf2\tab\tab  \lang1033\f2  \lang9\f1\{\cf0\par
+\lang1033\f2                    \cf1\lang9\b\f1 try\cf0\b0\par
+\lang1033\f2                  \cf2\lang9\f1\{\cf0\par
+\cf2\tab\tab\tab\tab System.\cf6\b\i out\cf2\b0\i0 .println(\cf5 "Enter first number"\cf2 );\cf0\par
+\cf2\tab\tab         \cf1\b int\cf2\b0  \cf3 n1\cf2  = \cf3 input\cf2 .nextInt();\cf0\par
+\cf2\tab\tab         System.\cf6\b\i out\cf2\b0\i0 .println(\cf5 "Enter second number"\cf2 );\cf0\par
+\cf2\tab\tab         \cf1\b int\cf2\b0  \cf3 n2\cf2  = \cf3 input\cf2 .nextInt();\cf0\par
+\cf2\tab\tab         \cf1\b int\cf2\b0  \cf3 div\cf2  = \cf3 n1\cf2 /\cf3 n2\cf2 ;\cf0\par
+\cf2\tab\tab         System.\cf6\b\i out\cf2\b0\i0 .println(\cf3 div\cf2 );\cf0\par
+\cf2\tab\tab         \cf3 x\cf2 =2;\cf0\par
+\cf2\tab\tab     \}\cf0\par
+\cf2\tab\tab  \cf1\b catch\cf2\b0 (Exception \cf3 e\cf2 )\{\cf0\par
+\cf2\tab\tab\tab  System.\cf6\b\i out\cf2\b0\i0 .println(\cf5 "you cant do that"\cf2 );\tab\cf0\par
+\cf2\tab\tab     \}\cf0\par
+\cf2\tab\tab  \} \cf1\b while\cf2\b0 (\cf3 x\cf2 ==1);\cf0\par
+\cf2\tab\tab\}\cf0\par
+\cf2\tab\}\cf0\par
+\lang1033\b\f2 #Reading Database classes\b0\par
+\b code:\b0\par
+\cf7 using\cf0  System;\par
+\cf7 using\cf0  System.Collections.Generic;\par
+\cf7 using\cf0  System.Linq;\par
+\cf7 using\cf0  System.Web.Mvc;\par
+namespace MVCDemo.Controllers\par
+\{\par
+\cf7 public class\cf0  \cf8 EmployeeController\cf0 :\cf8 Controller\cf0\par
+\{\par
+\cf7 public\cf0  \cf8 ActionResult\cf0  Details()\par
+\{  \cf8 Employee\cf0  employee = \cf7 new\cf0  \cf8 Employee\cf0 ()\par
+\{\par
+    EmployeeId =101,\par
+    Name = "\cf9 John\cf0 ",\par
+    Gender ="\cf9 Male\cf0 "\par
+    city ="\cf9 London\cf0 "\par
+\};\par
+\cf7 return\cf0  View();\par
+\}\par
+\b\fs22\par
+#Page Object Model and PageFactory\par
+\ul POM\ulnone\par
+\cf10\ul\b0\i RediffLoginPage\cf11 (Using POM)\cf0\ulnone\b\i0\par
+\cf1\f1\fs20 package\cf2\b0  objectrepository;\cf0\par
+\par
+\cf1\b import\cf2\b0  org.openqa.selenium.By;\cf0\par
+\cf1\b import\cf2\b0  org.openqa.selenium.WebDriver;\cf0\par
+\cf1\b import\cf2\b0  org.openqa.selenium.WebElement;\cf0\par
+\par
+\cf1\b public\cf2\b0  \cf1\b class\cf2\b0  RediffLoginpage \{\cf0\par
+\par
+\cf2\tab WebDriver \cf6 driver\cf2 ;\cf0\par
+\cf2\tab\cf1\b public\cf2\b0  RediffLoginpage(WebDriver \cf3 driver\cf2 ) \{\cf0\par
+\cf2\tab\tab\cf12 // \cf13\b TODO\cf12\b0  Auto-generated constructor stub\cf0\par
+\cf2\tab\tab\cf1\b this\cf2\b0 .\cf6 driver\cf2 =\cf3 driver\cf2 ;\cf0\par
+\cf2\tab\}\cf0\par
+\cf2\tab\cf0\par
+\cf2    By \cf6 username\cf2 =By.xpath(\cf5 ".//*[@id='login1']"\cf2 );\cf0\par
+\cf2    By \cf6 Password\cf2 =By.name(\cf5 "passwd"\cf2 );\cf0\par
+\cf2    By \cf6 go\cf2 =By.name(\cf5 "proceed"\cf2 );\cf0\par
+\cf2    By \cf6 home\cf2 =By.linkText(\cf5 "Home"\cf2 );\cf0\par
+\cf2    \cf0\par
+\cf2    \cf0\par
+\cf2    \cf1\b public\cf2\b0  WebElement Emaild()\cf0\par
+\cf2    \{\cf0\par
+\cf2\tab    \cf1\b return\cf2\b0  \cf6 driver\cf2 .findElement(\cf6 username\cf2 );\cf0\par
+\cf2    \}\cf0\par
+\cf2          \cf0\par
+\cf2    \cf1\b public\cf2\b0  WebElement Password()\cf0\par
+\cf2    \{\cf0\par
+\cf2\tab    \cf1\b return\cf2\b0  \cf6 driver\cf2 .findElement(\cf6 Password\cf2 );\cf0\par
+\cf2    \}\cf0\par
+\cf2    \cf0\par
+\cf2    \cf1\b public\cf2\b0  WebElement submit()\cf0\par
+\cf2    \{\cf0\par
+\cf2\tab    \cf1\b return\cf2\b0  \cf6 driver\cf2 .findElement(\cf6 go\cf2 );\cf0\par
+\cf2    \}\cf0\par
+\cf2    \cf0\par
+\cf2    \cf1\b public\cf2\b0  WebElement Home()\cf0\par
+\cf2    \{\cf0\par
+\cf2\tab    \cf1\b return\cf2\b0  \cf6 driver\cf2 .findElement(\cf6 home\cf2 );\cf0\par
+\cf2    \}\cf0\par
+\cf2\tab\cf0\par
+\cf2\}\par
+\par
+\cf10\ul\i\f2\fs22 LoginApplication\cf11 (Using POM)\cf2\ulnone\i0\fs20\par
+package testCases;\par
+\tab import objectrepository.RediffHomepage;\par
+\tab import objectrepository.RediffLoginpage;\par
+\tab import org.openqa.selenium.WebDriver;\par
+\tab import org.openqa.selenium.chrome.ChromeDriver;\par
+\tab import org.testng.annotations.Test;\par
+\par
+\tab public class LoginApplication \{\par
+\tab // Login page class implemented in normal page object pattern style\par
+\tab\tab\par
+\tab\tab // Home page class implemented in Page object factory methdos\par
+\tab\tab @Test\par
+\tab\tab public void Login()\par
+\tab\tab\{\par
+\tab\tab\tab System.setProperty("webdriver.chrome.driver", "C:\\\\chromedriver.exe");\par
+\tab\tab\tab WebDriver driver=new ChromeDriver();\par
+\tab\tab\tab driver.get("https://mail.rediff.com/cgi-bin/login.cgi");\par
+\tab\tab\tab RediffLoginpage rd=new RediffLoginpage(driver);\par
+\tab\tab\tab rd.Emaild().sendKeys("hello");\par
+\tab\tab\tab rd.Password().sendKeys("hello");\par
+\tab\tab\tab //rd.submit().click();\par
+\tab\tab\tab rd.Home().click();\par
+\tab\tab\tab RediffHomepage rh=new RediffHomepage(driver);\par
+\tab\tab\tab rh.Search().sendKeys("rediff");\par
+\tab\tab\tab rh.Submit().click();\tab\par
+\tab\tab\}\tab\par
+\tab\}\par
+\}\par
+\par
+\cf10\b\fs24 PageFactory(PF)\cf2\par
+\cf7\ul\b0\i RediffHomepagePF\cf2\ulnone\i0\fs20\par
+package objectRepository;\par
+\tab\par
+\tab import org.openqa.selenium.By;\par
+\tab import org.openqa.selenium.WebDriver;\par
+\tab import org.openqa.selenium.WebElement;\par
+\tab import org.openqa.selenium.support.FindBy;\par
+\tab import org.openqa.selenium.support.PageFactory;\par
+\par
+\tab public class RediffHomepagePF \{\par
+\tab\tab WebDriver driver;\par
+\tab\tab public RediffHomepage(WebDriver driver) \{\par
+\tab\tab\tab // TODO Auto-generated constructor stub\par
+\tab\tab\tab this.driver=driver;\par
+\tab\tab\tab PageFactory.initElements(driver, this);\par
+\tab\tab\}\par
+\tab\tab\par
+\tab   @FindBy(id="srchword")\par
+\tab   WebElement search;\par
+\tab   \par
+\tab   @FindBy(xpath="//input[@type='submit']")\par
+\tab   WebElement submit;\par
+\tab   \par
+\tab     \par
+\tab     public WebElement Search()\par
+\tab     \{\par
+\tab     \tab return search;\par
+\tab     \}\par
+\tab    \par
+\tab     public WebElement Submit()\par
+\tab     \{\par
+\tab     \tab return submit;\par
+\b\fs28\par
+\cf10\ul TestNG\cf2\par
+\cf7\b0\fs22 Using Annotations\cf2\b\fs28\par
+\ulnone\b0\fs20 package testng;\par
+\par
+import org.testng.annotations.AfterTest;\par
+import org.testng.annotations.BeforeMethod;\par
+import org.testng.annotations.BeforeTest;\par
+import org.testng.annotations.Test;\par
+\par
+public class Annotaion1 \{\par
+\tab\par
+\tab @BeforeMethod                     //this is npt annotation, its just pre-requisite\par
+\tab\par
+\tab public void UserId()\{\par
+\tab\tab\par
+\tab\tab System.out.println("Enter user Id");\par
+\tab\tab\par
+\tab\tab //this executes before each method starts\par
+\tab\}\par
+\tab\par
+\tab @BeforeTest                           //this is npt annotation, its just pre-requisite\par
+\tab\par
+\tab public void Cookies()\{\par
+\tab\tab\par
+\tab\tab System.out.println("Delete cookies before all tests");\par
+\tab\tab\par
+\tab\tab //this executes before test to clear all cookies\par
+\tab\}\par
+\tab\par
+\par
+\tab  @Test                  //Using @Test Annotation\par
+\tab  \par
+\tab  public void OpeningBrowser()\{\par
+\tab\tab  \par
+\tab\tab  System.out.println("Opening Browser");\par
+\tab\tab  \par
+\tab\tab  \par
+\tab  \}\par
+\tab  \par
+\tab  @AfterTest\par
+\tab  \par
+\tab  public void Cookies2()\{\par
+\tab\tab  \par
+\tab\tab  System.out.println("Delete cookies after all tests");\par
+\tab\tab  //this executes after test to clear all cookies\par
+\tab  \}\par
+\tab  \par
+\tab  @Test(groups=\{"Priority1"\})  //this is considered as 1st priority in all test cases\par
+\tab  \par
+\tab  public void BookingFlight()\{\par
+\tab\tab  \par
+\tab\tab  System.out.println("Booking flight"); \par
+\tab  \}\par
+\tab  \par
+@Test(groups=\{"Priority2"\})      //this is considered as 2nd priority in all test cases\par
+\tab  \par
+\tab  public void CancelFlight()\{\par
+\tab\tab  \par
+\tab\tab  System.out.println("Cancel flight"); \par
+\tab  \}\par
+\}\par
+\par
+\cf10\ul\fs22 Using Before Suite and After suite ....\cf2\ulnone\fs20\par
+\par
+package testng;\par
+\par
+import org.testng.annotations.AfterSuite;\par
+import org.testng.annotations.BeforeSuite;\par
+import org.testng.annotations.Test;\par
+\par
+public class Annot2 \{\par
+\tab\par
+\tab @BeforeSuite\par
+\tab\par
+\tab public void Installsoftware()\{\par
+\tab\tab\par
+\tab\tab System.out.println("I am the first");\par
+\tab\}\par
+@AfterSuite\par
+\tab\par
+\tab public void CloseInstall()\{\par
+\tab\tab\par
+\tab\tab System.out.println("Im the last");\par
+\tab\}\par
+\tab\par
+\tab\par
+\tab @Test\par
+\tab\par
+\tab public void OpenBrowser()\{\par
+\tab\tab\par
+\tab\tab System.out.println("Opens browser testcase");\par
+\tab\}\par
+\tab\par
+\tab @Test(dependsOnMethods =\{"OpenBrowser"\}, alwaysRun =true)// alwaysRun=Runs even specified method fails\par
+\tab\par
+\tab public void FlightBooking()\{\par
+\tab\tab\par
+\tab\tab System.out.println("It depends on specified method to execute which is given as attribute");\par
+\tab\}\par
+\tab\par
+\par
+\tab @Test(timeOut = 45000)         //can use for payment test cases\par
+\tab\par
+\tab public void Timerelated()\{\par
+\tab\tab\par
+\tab\tab System.out.println("Waits till specific time given");\par
+\tab\}\par
+\tab\par
+\tab @Test(enabled=false)      // this disables particular test case from all test cases\par
+\tab\par
+\tab public void Payment()\{\par
+\tab\tab\par
+\tab\tab System.out.println("This can disable testcase");\par
+\tab\}\par
+\tab\par
+\tab\par
+\tab\}\par
+\par
+\cf7\ul\b\fs24 TestNG XML\par
+\cf14\ulnone\b0\f1\fs20 <?\cf15 xml\cf0  \cf16 version\cf2 =\cf5\i "1.0"\cf0\i0  \cf16 encoding\cf2 =\cf5\i "UTF-8"\cf14\i0 ?>\cf0\par
+\cf14 <\cf15 suite\cf0  \cf16 name\cf0  \cf2 =\cf0  \cf5\i "Automation Test"\cf14\i0 >\cf2   // running particular test case using \cf0\par
+\cf14 <\cf15 test\cf14 >\cf0\par
+\cf14 <\cf15 classes\cf14 >\cf0\par
+\cf14 <\cf15 class\cf0  \cf16 name\cf0  \cf2 =\cf5\i "testng.Annot2"\cf14\i0 />\cf0\par
+\cf14 </\cf15 classes\cf14 >\cf0\par
+\cf14 </\cf15 test\cf14 >\cf0\par
+\cf14 </\cf15 suite\cf14 >\cf7\ul\b\fs24\par
+\f2 Groups\par
+\cf14\ulnone\b0\f1\fs20 <?\cf15 xml\cf0  \cf16 version\cf2 =\cf5\i "1.0"\cf0\i0  \cf16 encoding\cf2 =\cf5\i "UTF-8"\cf14\i0 ?>\cf0\par
+\cf14 <\cf15 Suite\cf0  \cf16 name\cf0  \cf2 =\cf0  \cf5\i " Automation Testing"\cf14\i0 >\cf0\par
+\cf14 <\cf15 test\cf14 >\cf0\par
+\cf14 <\cf15 groups\cf14 >\cf0\par
+\cf14 <\cf15 run\cf14 >\cf0\par
+\cf14 <\cf15 include\cf0  \cf16 name\cf0  \cf2 =\cf0  \cf5\i "Priority1"\cf0\i0  \cf14 />\cf2                      //ERROR\cf0\par
+\cf14 </\cf15 run\cf14 >\cf0\par
+\cf14 </\cf15 groups\cf14 >\cf0\par
+\cf14 <\cf15 classes\cf14 >\cf0\par
+\cf14 <\cf15 class\cf0  \cf16 name\cf0  \cf2 =\cf0  \cf5\i "testng.Annot2"\cf14\i0 />\cf0\par
+\cf14 <\cf15 class\cf0  \cf16 name\cf0  \cf2 =\cf5\i "testng.Annotation1"\cf14\i0 />\cf0\par
+\cf14 </\cf15 classes\cf14 >\cf0\par
+\cf14 </\cf15 test\cf14 >\cf0\par
+\cf14 </\cf15 Suite\cf14 >\par
+\cf7\ul\b\f2\fs24 Parameters\par
+\cf14\ulnone\b0\f1\fs20 <?\cf15 xml\cf0  \cf16 version\cf2 =\cf5\i "1.0"\cf0\i0  \cf16 encoding\cf2 =\cf5\i "UTF-8"\cf14\i0 ?>\cf0\par
+\cf14 <\cf15 Suite\cf0  \cf16 name\cf0  \cf2 =\cf0  \cf5\i " Automation Testing"\cf14\i0 >\cf0\par
+\cf14 <\cf15 test\cf14 >\cf0\par
+\cf2        \cf14 <\cf15 parameter\cf0  \cf16 name\cf2 =\cf5\i "adminUserid"\cf0\i0  \cf16 value\cf2 =\cf5\i "abcd"\cf0\i0  \cf14 />\cf2     //it uses variable adminUserid \cf0\par
+\cf14 <\cf15 classes\cf14 >\cf0\par
+\cf14 <\cf15 class\cf0  \cf16 name\cf0  \cf2 =\cf5\i "testng.Annotation1"\cf14\i0 />\cf0\par
+\cf14 </\cf15 classes\cf14 >\cf0\par
+\cf14 </\cf15 test\cf14 >\cf0\par
+\cf14 </\cf15 Suite\cf14 >\cf0\par
+\cf2\f2\par
+\tab\par
+\par
+\b\fs28\par
+}
+ 
